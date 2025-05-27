@@ -1,9 +1,0 @@
-CharacterBody2D
-AnimatedSprite2D
-Label
-Node
-CollisionShape2D
-Timer
-Area2D
-StaticBody2D
-Camera2D
