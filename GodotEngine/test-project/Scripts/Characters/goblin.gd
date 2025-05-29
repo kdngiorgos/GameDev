@@ -4,13 +4,14 @@ extends CharacterBody2D
 @export var movementspeed= 30.0
 @onready var player = get_tree().get_first_node_in_group("player")
 
-var health = 20
+var health = 10
 var power = 10
+var speed = 100
 
 func _physics_process(delta: float) -> void:
 	var direction = global_position.direction_to(player.global_position)
 	if !GameManager.timefrozen:
-		velocity = delta * 60 * direction * movementspeed
+		velocity = delta *speed * direction * movementspeed
 		animsprite.flip_h = direction.x < 0
 	else:
 		velocity = 0 * direction 

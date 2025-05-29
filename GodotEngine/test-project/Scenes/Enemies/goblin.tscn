@@ -161,6 +161,8 @@ height = 14.0
 size = Vector2(16, 9)
 
 [node name="Goblin" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_f3y3q")
 
