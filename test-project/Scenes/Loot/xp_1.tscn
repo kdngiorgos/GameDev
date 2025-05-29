@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://68stj5qu6t"]
 
 [ext_resource type="Script" path="res://Scripts/Loot/xp_1.gd" id="1_23bav"]
-[ext_resource type="Texture2D" uid="uid://d6s3a5t5i6ma" path="res://Assets/aseprite-001.png" id="2_qovsm"]
+[ext_resource type="Texture2D" uid="uid://d6s3a5t5i6ma" path="res://Assets/Images/xporb1.png" id="2_qovsm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rdoqy"]
 atlas = ExtResource("2_qovsm")

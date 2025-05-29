@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_h4ty7"]
 [ext_resource type="PackedScene" uid="uid://cd20kn1ijbfje" path="res://Scenes/Player/player.tscn" id="1_nv703"]
 [ext_resource type="Script" path="res://Scripts/spawn_info.gd" id="2_bjkxm"]
-[ext_resource type="Texture2D" uid="uid://dsvk1s2aues5g" path="res://Assets/Pixel Art Top Down - Basic v1.2.0/Texture/TX Tileset Grass.png" id="2_jxbx8"]
+[ext_resource type="Texture2D" uid="uid://dsvk1s2aues5g" path="res://Assets/Images/Pixel Art Top Down - Basic v1.2.0/Texture/TX Tileset Grass.png" id="2_jxbx8"]
 [ext_resource type="PackedScene" uid="uid://bkv4uk3vqkgpk" path="res://Scenes/Enemies/goblin.tscn" id="3_dxmjg"]
 [ext_resource type="PackedScene" uid="uid://68stj5qu6t" path="res://Scenes/Loot/xp_1.tscn" id="3_ldc4c"]
-[ext_resource type="Texture2D" uid="uid://b7e4o1bgduf3e" path="res://Assets/Pixel Art Top Down - Basic v1.2.0/Texture/TX Plant.png" id="4_esgrg"]
+[ext_resource type="Texture2D" uid="uid://b7e4o1bgduf3e" path="res://Assets/Images/Pixel Art Top Down - Basic v1.2.0/Texture/TX Plant.png" id="4_esgrg"]
 [ext_resource type="PackedScene" uid="uid://cesepjbbn808b" path="res://Scenes/Loot/xp_2.tscn" id="5_ksov4"]
 [ext_resource type="PackedScene" uid="uid://yhp73dw4jud4" path="res://Scenes/enemy_spawner.tscn" id="8_643dj"]
 
@@ -105,6 +105,12 @@ spawns = Array[ExtResource("2_bjkxm")]([SubResource("Resource_anmqh")])
 
 [node name="Goblin" parent="Enemies" instance=ExtResource("3_dxmjg")]
 position = Vector2(157, 106)
+
+[node name="Goblin2" parent="Enemies" instance=ExtResource("3_dxmjg")]
+position = Vector2(-143, 102)
+
+[node name="Goblin3" parent="Enemies" instance=ExtResource("3_dxmjg")]
+position = Vector2(199, -49)
 
 [node name="Background" type="TileMap" parent="."]
 z_index = -1

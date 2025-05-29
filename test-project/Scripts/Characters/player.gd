@@ -41,7 +41,7 @@ func _physics_process(_delta):
 		pausenemies()
 
 
-func _on_hurtbox_hurt(damage: Variant) -> void:
+func _on_hurtbox_hurt(damage, _angle, _knockback_amount):
 	health -= damage
 	print("player got hit")
 	print(health)
@@ -74,7 +74,12 @@ func _on_water_orb_attack_timer_timeout() -> void:
 		
 func get_random_target():
 	if enemy_close.size() > 0:
-		return enemy_close.pick_random().global_position
+		#return enemy_close.pick_random().global_position
+		var tmp = enemy_close.pick_random()
+		if tmp.isAlive:
+			return tmp.global_position
+		else:
+			return Vector2.ZERO
 	else:
 		return Vector2.ZERO
 

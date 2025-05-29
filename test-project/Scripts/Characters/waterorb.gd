@@ -2,9 +2,9 @@ extends Area2D
 
 var level = 1
 var hp = 1 
-var speed = 100
+var speed = 150
 var damage =5
-var knock_amount = 100
+var knockback_amount = 100
 var attack_size = 1.0
 
 var target = Vector2.ZERO
@@ -18,14 +18,14 @@ func _ready():
 	match level:
 		1:
 			hp =1 
-			speed = 100
+			speed = 200
 			damage =5 
-			knock_amount = 100
+			knockback_amount = 100
 			attack_size = 1.0
 		
 	
 	var tween = create_tween()
-	tween.tween_property(self,"scale",Vector2(1,1)*attack_size,0.5).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self,"scale",Vector2(1,1)*attack_size,0.7).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT)
 	tween.play()
 	
 	
