@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmasj7pcvqtso"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/Player/cloud.gd" id="1_aaqs0"]
+[ext_resource type="Texture2D" uid="uid://c0mj1asr3inc7" path="res://Assets/Images/cloud.png" id="2_edu5e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2a2p2"]
+size = Vector2(29.3333, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vokv"]
+atlas = ExtResource("2_edu5e")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jebqm"]
+atlas = ExtResource("2_edu5e")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydibg"]
+atlas = ExtResource("2_edu5e")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f5ew"]
+atlas = ExtResource("2_edu5e")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hvems"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vokv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jebqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydibg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f5ew")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Cloud" type="Area2D" groups=["attack"]]
+top_level = true
+scale = Vector2(0.1, 0.1)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_aaqs0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_2a2p2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="snd_attack" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(1, 1.125)
+sprite_frames = SubResource("SpriteFrames_hvems")
+autoplay = "default"
+frame_progress = 0.0560571
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

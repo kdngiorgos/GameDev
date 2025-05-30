@@ -1,6 +1,6 @@
-[gd_scene load_steps=30 format=3 uid="uid://cd20kn1ijbfje"]
+[gd_scene load_steps=32 format=3 uid="uid://cd20kn1ijbfje"]
 
-[ext_resource type="Script" path="res://Scripts/Characters/player.gd" id="1_7acmt"]
+[ext_resource type="Script" path="res://Scripts/Characters/Player/player.gd" id="1_7acmt"]
 [ext_resource type="Texture2D" uid="uid://cif56wv5skvmo" path="res://Assets/Images/Blue Witch/Blue_witch/B_witch_death.png" id="2_a3i7i"]
 [ext_resource type="Texture2D" uid="uid://b4cxnwjsokm25" path="res://Assets/Images/Blue Witch/Blue_witch/B_witch_idle.png" id="2_yankr"]
 [ext_resource type="Texture2D" uid="uid://brxk017tqftwb" path="res://Assets/Images/Blue Witch/Blue_witch/B_witch_run.png" id="3_b8v2k"]
@@ -164,6 +164,12 @@ radius = 22.0907
 [sub_resource type="CircleShape2D" id="CircleShape2D_n1ubu"]
 radius = 174.003
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_duhqc"]
+
+[sub_resource type="Gradient" id="Gradient_6rr6x"]
+offsets = PackedFloat32Array(0, 0.180095, 0.791469, 0.990521)
+colors = PackedColorArray(0.0705882, 1, 1, 0, 0.0705882, 1, 1, 1, 0.0705882, 1, 1, 0.891473, 0.0705882, 1, 1, 0)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 collision_layer = 2
@@ -211,6 +217,17 @@ wait_time = 1.5
 unique_name_in_owner = true
 wait_time = 0.075
 
+[node name="CloudTimer" type="Timer" parent="Attack"]
+unique_name_in_owner = true
+wait_time = 3.0
+
+[node name="CloudAttackTimer" type="Timer" parent="Attack/CloudTimer"]
+unique_name_in_owner = true
+wait_time = 0.2
+
+[node name="WaveAttackTimer" type="Timer" parent="Attack"]
+unique_name_in_owner = true
+
 [node name="EnemyDetectionArea" type="Area2D" parent="."]
 visible = false
 collision_layer = 4
@@ -221,9 +238,23 @@ monitorable = false
 visible = false
 shape = SubResource("CircleShape2D_n1ubu")
 
+[node name="Line2D" type="Line2D" parent="."]
+top_level = true
+z_index = -1
+material = SubResource("CanvasItemMaterial_duhqc")
+position = Vector2(0, 16)
+points = PackedVector2Array(0, 16)
+width = 4.0
+default_color = Color(0.0705882, 1, 1, 1)
+gradient = SubResource("Gradient_6rr6x")
+joint_mode = 2
+
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="timeout" from="Attack/WaterOrbTimer" to="." method="_on_water_orb_timer_timeout"]
 [connection signal="timeout" from="Attack/WaterOrbTimer/WaterOrbAttackTimer" to="." method="_on_water_orb_attack_timer_timeout"]
+[connection signal="timeout" from="Attack/CloudTimer" to="." method="_on_cloud_timer_timeout"]
+[connection signal="timeout" from="Attack/CloudTimer/CloudAttackTimer" to="." method="_on_cloud_attack_timer_timeout"]
+[connection signal="timeout" from="Attack/WaveAttackTimer" to="." method="_on_wave_attack_timer_timeout"]
 [connection signal="body_entered" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_body_entered"]
 [connection signal="body_exited" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_body_exited"]
 

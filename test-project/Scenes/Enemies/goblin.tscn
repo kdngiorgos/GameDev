@@ -1,11 +1,13 @@
-[gd_scene load_steps=29 format=3 uid="uid://bkv4uk3vqkgpk"]
+[gd_scene load_steps=31 format=3 uid="uid://bkv4uk3vqkgpk"]
 
-[ext_resource type="Script" path="res://Scripts/Characters/goblin.gd" id="1_f3y3q"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemies/goblin.gd" id="1_f3y3q"]
 [ext_resource type="Texture2D" uid="uid://bxpclh6dopllp" path="res://Assets/Images/Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Idle.png" id="1_l625p"]
 [ext_resource type="Texture2D" uid="uid://d2t8mgbnhvqjb" path="res://Assets/Images/Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Death.png" id="1_sa2yb"]
 [ext_resource type="Texture2D" uid="uid://c7ajf7xheenq5" path="res://Assets/Images/Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Walk.png" id="3_65jpe"]
 [ext_resource type="PackedScene" uid="uid://ce10wp461kxs" path="res://Scenes/hurtbox.tscn" id="5_sgjli"]
 [ext_resource type="PackedScene" uid="uid://byivnwb657ec0" path="res://Scenes/hitbox.tscn" id="6_v852v"]
+[ext_resource type="AudioStream" uid="uid://uwgc2mqppsk1" path="res://Assets/Sound/enemyhit.wav" id="7_ugwmn"]
+[ext_resource type="AudioStream" uid="uid://bdmnfidt7bity" path="res://Assets/Sound/enemydeath.wav" id="8_yy5rd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jkesu"]
 atlas = ExtResource("1_sa2yb")
@@ -193,6 +195,16 @@ damage = 5
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2(4, 1)
 shape = SubResource("RectangleShape2D_gt03s")
+
+[node name="snd_hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ugwmn")
+volume_db = -34.589
+pitch_scale = 6.0
+
+[node name="snd_die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_yy5rd")
+volume_db = -25.0
+pitch_scale = 1.2
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]

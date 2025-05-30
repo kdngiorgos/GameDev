@@ -103,17 +103,8 @@ y_sort_enabled = true
 y_sort_enabled = true
 spawns = Array[ExtResource("2_bjkxm")]([SubResource("Resource_anmqh")])
 
-[node name="Goblin" parent="Enemies" instance=ExtResource("3_dxmjg")]
-position = Vector2(157, 106)
-
-[node name="Goblin2" parent="Enemies" instance=ExtResource("3_dxmjg")]
-position = Vector2(-143, 102)
-
-[node name="Goblin3" parent="Enemies" instance=ExtResource("3_dxmjg")]
-position = Vector2(199, -49)
-
 [node name="Background" type="TileMap" parent="."]
-z_index = -1
+z_index = -20
 position = Vector2(1, 0)
 tile_set = SubResource("TileSet_pc7g8")
 format = 2
@@ -163,5 +154,17 @@ motion_mode = 1
 position = Vector2(0, -6)
 zoom = Vector2(3, 3)
 position_smoothing_speed = 2.0
+
+[node name="Goblin" parent="." instance=ExtResource("3_dxmjg")]
+position = Vector2(-153, 72)
+
+[node name="Goblin2" parent="." instance=ExtResource("3_dxmjg")]
+position = Vector2(279, 140)
+
+[node name="Goblin3" parent="." instance=ExtResource("3_dxmjg")]
+position = Vector2(276, -141)
+
+[node name="Goblin4" parent="." instance=ExtResource("3_dxmjg")]
+position = Vector2(-295, -169)
 
 [editable path="Enemies/EnemySpawner"]
