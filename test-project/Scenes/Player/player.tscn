@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://cd20kn1ijbfje"]
+[gd_scene load_steps=33 format=3 uid="uid://cd20kn1ijbfje"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/player.gd" id="1_7acmt"]
 [ext_resource type="Texture2D" uid="uid://cif56wv5skvmo" path="res://Assets/Images/Blue Witch/Blue_witch/B_witch_death.png" id="2_a3i7i"]
 [ext_resource type="Texture2D" uid="uid://b4cxnwjsokm25" path="res://Assets/Images/Blue Witch/Blue_witch/B_witch_idle.png" id="2_yankr"]
+[ext_resource type="PackedScene" uid="uid://bisqex85ape8x" path="res://Scenes/Player/dash.tscn" id="2_ynr71"]
 [ext_resource type="Texture2D" uid="uid://brxk017tqftwb" path="res://Assets/Images/Blue Witch/Blue_witch/B_witch_run.png" id="3_b8v2k"]
 [ext_resource type="PackedScene" uid="uid://ce10wp461kxs" path="res://Scenes/hurtbox.tscn" id="5_7ct0h"]
 [ext_resource type="PackedScene" uid="uid://byivnwb657ec0" path="res://Scenes/hitbox.tscn" id="6_4lca3"]
@@ -176,6 +177,8 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_7acmt")
 
+[node name="Dash" parent="." instance=ExtResource("2_ynr71")]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_bbbju")
@@ -192,7 +195,7 @@ shape = SubResource("CapsuleShape2D_rwfvp")
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+[node name="CollisionShape2D" parent="Hurtbox" index="0" groups=["player"]]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_0kepm")
 

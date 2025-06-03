@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://nbmr1aiwwh6j"]
+
+[ext_resource type="Shader" path="res://Scenes/Player/dash_ghost.gdshader" id="1_38rdy"]
+[ext_resource type="Script" path="res://Scripts/Characters/Player/dash_ghost.gd" id="1_lskha"]
+[ext_resource type="Texture2D" uid="uid://bewr7hpsjddxe" path="res://Assets/Images/Blue Witch/Blue_witch/B_witch_ghost.png" id="1_yv404"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gwptt"]
+shader = ExtResource("1_38rdy")
+shader_parameter/whiten = true
+shader_parameter/mix_weight = 1.0
+
+[node name="DashGhost" type="Sprite2D"]
+material = SubResource("ShaderMaterial_gwptt")
+position = Vector2(0, -2)
+texture = ExtResource("1_yv404")
+script = ExtResource("1_lskha")

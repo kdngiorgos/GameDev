@@ -153,7 +153,7 @@ motion_mode = 1
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -6)
 zoom = Vector2(3, 3)
-position_smoothing_speed = 2.0
+position_smoothing_speed = 10.0
 
 [node name="Goblin" parent="." instance=ExtResource("3_dxmjg")]
 position = Vector2(-153, 72)

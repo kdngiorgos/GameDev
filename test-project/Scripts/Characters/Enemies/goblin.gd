@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var snd_hit = $snd_hit
 @onready var snd_die = $snd_die
-
+@onready var hitbox = $Hitbox
 
 #Variables
 @export var knockback_recovery = 3.5
@@ -31,11 +31,13 @@ func _physics_process(delta: float) -> void:
 		if !GameManager.timefrozen:
 			velocity = delta *speed * direction * movementspeed
 			velocity += knockback
-			animsprite.flip_h = direction.x < 0
+			animsprite.flip_h = direction.x > 0
 		else:
 			velocity = 0 * direction 
 		anim()
 		move_and_slide()
+	else:
+		hitbox.damage = 0
 	
 func anim():
 	if !isAlive:
@@ -56,5 +58,4 @@ func _on_hurtbox_hurt(damage, angle, knockback_amount):
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animsprite.animation == "death":
-		await get_tree().create_timer(5.0).timeout
 		queue_free()

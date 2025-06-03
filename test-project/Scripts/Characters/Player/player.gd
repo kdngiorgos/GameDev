@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 #Imports
 @onready var animsprite = $AnimatedSprite2D
-
+@onready var dash = $Dash
 
 #Wave
 var wave = preload("res://Scenes/Player/attacks/wave.tscn")
@@ -28,6 +28,9 @@ var trail_timer := 0.0
 
 var last_movement = Vector2.ZERO
 var isRunning = 0 
+
+
+
 #Variables
 
 var acc = 6
@@ -37,8 +40,10 @@ var experience = 0
 var nrg = 50
 
 #Dash Stats
-var dashboost = 150
+var dashboost = 300
 var dashcost = 1
+var dash_duration = 0.2
+
 
 
 #Wave
@@ -79,7 +84,7 @@ func _process(delta):
 		trail_points.clear()
 		line.points = []
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	movement()
 	anim()
 	if Input.is_action_just_pressed("pause"):
@@ -87,6 +92,7 @@ func _physics_process(delta):
 
 
 func _on_hurtbox_hurt(damage, _angle, _knockback_amount):
+	if dash.is_dashing(): return
 	health -= damage
 	print("player got hit")
 	print(health)
@@ -184,12 +190,6 @@ func get_random_target():
 		return Vector2.ZERO
 
 
-#Dash Movement
-func dash(dir):
-	if nrg >=dashcost: #Handle dash movement
-		nrg -= dashcost
-		velocity += dir * dashboost
-
 func getExp(points):
 	experience += points
 	
@@ -215,10 +215,14 @@ func movement():
 	if direction.x != 0 or direction.y!=0:
 		velocity += direction * acc #Accelerate
 		animsprite.flip_h = direction.x < 0 # Flip horizontally if moving left
+
 		
-	if Input.is_action_just_pressed("dash"): #Handle dash movement
-		dash(direction) 
-		
+	if Input.is_action_just_pressed("dash") && dash.can_dash && !dash.is_dashing(): #Handle dash movement
+		if nrg >= dashcost:
+			nrg -= dashcost
+			dash.start_dash(animsprite, dash_duration)
+			velocity += dashboost * direction
+	
 	move_and_slide()
 	
 	last_movement = direction
