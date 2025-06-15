@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=3 uid="uid://dlv0tni11ud4g"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/Player/wave.gd" id="1_8yy28"]
+[ext_resource type="Texture2D" uid="uid://b0tyjemj8xybo" path="res://Assets/Images/wave.png" id="2_kygbv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2a3y"]
+size = Vector2(30, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x84u6"]
+atlas = ExtResource("2_kygbv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvi0j"]
+atlas = ExtResource("2_kygbv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knpw5"]
+atlas = ExtResource("2_kygbv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvtlr"]
+atlas = ExtResource("2_kygbv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3a6o"]
+atlas = ExtResource("2_kygbv")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1j3y"]
+atlas = ExtResource("2_kygbv")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyo1v"]
+atlas = ExtResource("2_kygbv")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0ey6"]
+atlas = ExtResource("2_kygbv")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1r0l6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x84u6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvi0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knpw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvtlr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3a6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1j3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyo1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0ey6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="Wave" type="Area2D" groups=["attack"]]
+top_level = true
+scale = Vector2(0.1, 0.1)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_8yy28")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.38418e-06, 2.5)
+shape = SubResource("RectangleShape2D_f2a3y")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.8026e-45, -9.53674e-07)
+sprite_frames = SubResource("SpriteFrames_1r0l6")
+autoplay = "default"
+frame_progress = 0.218982
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

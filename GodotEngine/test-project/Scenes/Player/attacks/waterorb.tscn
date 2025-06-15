@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://caghpdp7cmyn6"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/Player/waterorb.gd" id="1_3n5s1"]
+[ext_resource type="Texture2D" uid="uid://ndiamxlk06br" path="res://Assets/Images/waterorb.png" id="2_42aew"]
+[ext_resource type="AudioStream" uid="uid://tdjqdmgx80aj" path="res://Assets/Sound/396499__alonsotm__icespell03.wav" id="3_f5pvf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ciy71"]
+radius = 7.0
+height = 42.8273
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv17g"]
+atlas = ExtResource("2_42aew")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixefy"]
+atlas = ExtResource("2_42aew")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi6ug"]
+atlas = ExtResource("2_42aew")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldjsc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv17g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixefy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi6ug")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="WaterOrb" type="Area2D" groups=["attack"]]
+top_level = true
+scale = Vector2(0.1, 0.1)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_3n5s1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 2.32652
+shape = SubResource("CapsuleShape2D_ciy71")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -1)
+rotation = -2.35619
+sprite_frames = SubResource("SpriteFrames_ldjsc")
+autoplay = "default"
+frame_progress = 0.613212
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_f5pvf")
+volume_db = -24.0
+pitch_scale = 5.5
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

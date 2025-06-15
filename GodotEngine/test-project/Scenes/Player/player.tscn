@@ -1,11 +1,15 @@
-[gd_scene load_steps=30 format=3 uid="uid://cd20kn1ijbfje"]
+[gd_scene load_steps=37 format=3 uid="uid://cd20kn1ijbfje"]
 
-[ext_resource type="Script" path="res://Scripts/Characters/player.gd" id="1_7acmt"]
-[ext_resource type="Texture2D" uid="uid://cif56wv5skvmo" path="res://Assets/Blue Witch/Blue_witch/B_witch_death.png" id="2_a3i7i"]
-[ext_resource type="Texture2D" uid="uid://b4cxnwjsokm25" path="res://Assets/Blue Witch/Blue_witch/B_witch_idle.png" id="2_yankr"]
-[ext_resource type="Texture2D" uid="uid://brxk017tqftwb" path="res://Assets/Blue Witch/Blue_witch/B_witch_run.png" id="3_b8v2k"]
+[ext_resource type="Script" path="res://Scripts/Characters/Player/player.gd" id="1_7acmt"]
+[ext_resource type="Texture2D" uid="uid://cif56wv5skvmo" path="res://Assets/Images/Blue Witch/Blue_witch/B_witch_death.png" id="2_a3i7i"]
+[ext_resource type="Texture2D" uid="uid://b4cxnwjsokm25" path="res://Assets/Images/Blue Witch/Blue_witch/B_witch_idle.png" id="2_yankr"]
+[ext_resource type="PackedScene" uid="uid://bisqex85ape8x" path="res://Scenes/Player/dash.tscn" id="2_ynr71"]
+[ext_resource type="Texture2D" uid="uid://brxk017tqftwb" path="res://Assets/Images/Blue Witch/Blue_witch/B_witch_run.png" id="3_b8v2k"]
 [ext_resource type="PackedScene" uid="uid://ce10wp461kxs" path="res://Scenes/hurtbox.tscn" id="5_7ct0h"]
 [ext_resource type="PackedScene" uid="uid://byivnwb657ec0" path="res://Scenes/hitbox.tscn" id="6_4lca3"]
+[ext_resource type="Texture2D" uid="uid://b0xhttvluh2px" path="res://Assets/Images/experiencebackground.png" id="8_p6owb"]
+[ext_resource type="Texture2D" uid="uid://cu5ldw2kslpq" path="res://Assets/Images/experiencefill.png" id="9_1by1m"]
+[ext_resource type="FontFile" uid="uid://d2huecrkhaieo" path="res://Assets/JustBreatheBoldObliquethree-mOAj.otf" id="10_1vcx7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2x17u"]
 atlas = ExtResource("2_a3i7i")
@@ -156,19 +160,34 @@ radius = 5.0
 height = 28.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kepm"]
-size = Vector2(7, 20)
+size = Vector2(7, 14)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pfbu7"]
-radius = 21.5232
+radius = 22.0907
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n1ubu"]
 radius = 174.003
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l03pd"]
+radius = 52.0096
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mg8bc"]
+radius = 7.07107
+
+[sub_resource type="LabelSettings" id="LabelSettings_x0017"]
+font_size = 64
+font_color = Color(0, 0.747942, 0.748742, 1)
+outline_size = 2
+outline_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_7acmt")
+
+[node name="Dash" parent="." instance=ExtResource("2_ynr71")]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
@@ -178,18 +197,21 @@ autoplay = "idle"
 frame_progress = 0.175527
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 y_sort_enabled = true
 shape = SubResource("CapsuleShape2D_rwfvp")
 
 [node name="Hurtbox" parent="." instance=ExtResource("5_7ct0h")]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" parent="Hurtbox" index="0"]
-visible = false
+[node name="CollisionShape2D" parent="Hurtbox" index="0" groups=["player"]]
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_0kepm")
 
 [node name="Hitbox" parent="." instance=ExtResource("6_4lca3")]
+visible = false
 position = Vector2(36.394, -9.94666)
 collision_layer = 4
 collision_mask = 4
@@ -201,6 +223,7 @@ position = Vector2(-36.394, 9.94666)
 shape = SubResource("CircleShape2D_pfbu7")
 
 [node name="Attack" type="Node2D" parent="."]
+visible = false
 
 [node name="WaterOrbTimer" type="Timer" parent="Attack"]
 unique_name_in_owner = true
@@ -210,19 +233,87 @@ wait_time = 1.5
 unique_name_in_owner = true
 wait_time = 0.075
 
+[node name="CloudTimer" type="Timer" parent="Attack"]
+unique_name_in_owner = true
+wait_time = 3.0
+
+[node name="CloudAttackTimer" type="Timer" parent="Attack/CloudTimer"]
+unique_name_in_owner = true
+wait_time = 0.2
+
+[node name="WaveAttackTimer" type="Timer" parent="Attack"]
+unique_name_in_owner = true
+
 [node name="EnemyDetectionArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 4
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetectionArea"]
+visible = false
 shape = SubResource("CircleShape2D_n1ubu")
+
+[node name="GrabArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea"]
+shape = SubResource("CircleShape2D_l03pd")
+
+[node name="CollectArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectArea"]
+shape = SubResource("CircleShape2D_mg8bc")
+
+[node name="GUILayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" type="Control" parent="GUILayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="lbl_level" type="Label" parent="GUILayer/GUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 96.0
+offset_right = 242.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("10_1vcx7")
+text = "Level: 1"
+label_settings = SubResource("LabelSettings_x0017")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="Control" parent="GUILayer/GUI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(7.5, 3)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="GUILayer/GUI/ProgressBar"]
+unique_name_in_owner = true
+z_index = 4096
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 32.0
+texture_over = ExtResource("8_p6owb")
+texture_progress = ExtResource("9_1by1m")
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="timeout" from="Attack/WaterOrbTimer" to="." method="_on_water_orb_timer_timeout"]
 [connection signal="timeout" from="Attack/WaterOrbTimer/WaterOrbAttackTimer" to="." method="_on_water_orb_attack_timer_timeout"]
+[connection signal="timeout" from="Attack/CloudTimer" to="." method="_on_cloud_timer_timeout"]
+[connection signal="timeout" from="Attack/CloudTimer/CloudAttackTimer" to="." method="_on_cloud_attack_timer_timeout"]
+[connection signal="timeout" from="Attack/WaveAttackTimer" to="." method="_on_wave_attack_timer_timeout"]
 [connection signal="body_entered" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_body_entered"]
 [connection signal="body_exited" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_body_exited"]
+[connection signal="area_entered" from="GrabArea" to="." method="_on_grab_area_area_entered"]
+[connection signal="area_entered" from="CollectArea" to="." method="_on_collect_area_area_entered"]
 
 [editable path="Hurtbox"]
 [editable path="Hitbox"]

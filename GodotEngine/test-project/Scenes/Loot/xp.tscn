@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://68stj5qu6t"]
+
+[ext_resource type="Script" path="res://Scripts/Loot/xp.gd" id="1_23bav"]
+[ext_resource type="Texture2D" uid="uid://45r2smh1s6ca" path="res://Assets/Images/experienceblue.png" id="2_v6tvm"]
+[ext_resource type="AudioStream" uid="uid://f0b6cyaoj8el" path="res://Assets/Sound/coin.mp3" id="3_0a1bn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b7id4"]
+radius = 4.0
+
+[node name="XP" type="Area2D" groups=["loot"]]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_23bav")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b7id4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, -2.38419e-07)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("2_v6tvm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0a1bn")
+volume_db = -40.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

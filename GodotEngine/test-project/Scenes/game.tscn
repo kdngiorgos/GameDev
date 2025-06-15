@@ -1,13 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://b50mv5he40nxn"]
+[gd_scene load_steps=14 format=3 uid="uid://b50mv5he40nxn"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_h4ty7"]
 [ext_resource type="PackedScene" uid="uid://cd20kn1ijbfje" path="res://Scenes/Player/player.tscn" id="1_nv703"]
 [ext_resource type="Script" path="res://Scripts/spawn_info.gd" id="2_bjkxm"]
-[ext_resource type="Texture2D" uid="uid://dsvk1s2aues5g" path="res://Assets/Pixel Art Top Down - Basic v1.2.0/Texture/TX Tileset Grass.png" id="2_jxbx8"]
+[ext_resource type="Texture2D" uid="uid://dsvk1s2aues5g" path="res://Assets/Images/Pixel Art Top Down - Basic v1.2.0/Texture/TX Tileset Grass.png" id="2_jxbx8"]
 [ext_resource type="PackedScene" uid="uid://bkv4uk3vqkgpk" path="res://Scenes/Enemies/goblin.tscn" id="3_dxmjg"]
-[ext_resource type="PackedScene" uid="uid://68stj5qu6t" path="res://Scenes/Loot/xp_1.tscn" id="3_ldc4c"]
-[ext_resource type="Texture2D" uid="uid://b7e4o1bgduf3e" path="res://Assets/Pixel Art Top Down - Basic v1.2.0/Texture/TX Plant.png" id="4_esgrg"]
-[ext_resource type="PackedScene" uid="uid://cesepjbbn808b" path="res://Scenes/Loot/xp_2.tscn" id="5_ksov4"]
+[ext_resource type="PackedScene" uid="uid://68stj5qu6t" path="res://Scenes/Loot/xp.tscn" id="3_ldc4c"]
+[ext_resource type="Texture2D" uid="uid://b7e4o1bgduf3e" path="res://Assets/Images/Pixel Art Top Down - Basic v1.2.0/Texture/TX Plant.png" id="4_esgrg"]
 [ext_resource type="PackedScene" uid="uid://yhp73dw4jud4" path="res://Scenes/enemy_spawner.tscn" id="8_643dj"]
 
 [sub_resource type="Resource" id="Resource_anmqh"]
@@ -103,11 +102,8 @@ y_sort_enabled = true
 y_sort_enabled = true
 spawns = Array[ExtResource("2_bjkxm")]([SubResource("Resource_anmqh")])
 
-[node name="Goblin" parent="Enemies" instance=ExtResource("3_dxmjg")]
-position = Vector2(157, 106)
-
 [node name="Background" type="TileMap" parent="."]
-z_index = -1
+z_index = -20
 position = Vector2(1, 0)
 tile_set = SubResource("TileSet_pc7g8")
 format = 2
@@ -117,25 +113,27 @@ layer_0/tile_data = PackedInt32Array(-458753, 131072, 8, -917505, 0, 8, -655363,
 unique_name_in_owner = true
 script = ExtResource("1_h4ty7")
 
-[node name="Xpoints" type="Node" parent="."]
+[node name="Loot" type="Node" parent="." groups=["loot"]]
 
-[node name="XP1_0" parent="Xpoints" instance=ExtResource("3_ldc4c")]
-position = Vector2(-108, -16)
+[node name="XP" parent="Loot" instance=ExtResource("3_ldc4c")]
+z_index = -1
+position = Vector2(125, -88)
+experience = 5
 
-[node name="XP1_2" parent="Xpoints" instance=ExtResource("3_ldc4c")]
-position = Vector2(-86, 13)
+[node name="XP2" parent="Loot" instance=ExtResource("3_ldc4c")]
+z_index = -1
+position = Vector2(153, -37)
+experience = 5
 
-[node name="XP1_1" parent="Xpoints" instance=ExtResource("3_ldc4c")]
-position = Vector2(-70, -11)
+[node name="XP3" parent="Loot" instance=ExtResource("3_ldc4c")]
+z_index = -1
+position = Vector2(100, -41)
+experience = 5
 
-[node name="XP2_0" parent="Xpoints" instance=ExtResource("5_ksov4")]
-position = Vector2(-55, 10)
-
-[node name="XP2_1" parent="Xpoints" instance=ExtResource("5_ksov4")]
-position = Vector2(-94, 41)
-
-[node name="XP2_2" parent="Xpoints" instance=ExtResource("5_ksov4")]
-position = Vector2(-111, 19)
+[node name="XP4" parent="Loot" instance=ExtResource("3_ldc4c")]
+z_index = -1
+position = Vector2(71, -78)
+experience = 5
 
 [node name="Plants" type="Node" parent="."]
 
@@ -156,6 +154,18 @@ motion_mode = 1
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -6)
 zoom = Vector2(3, 3)
-position_smoothing_speed = 2.0
+position_smoothing_speed = 10.0
+
+[node name="Goblin" parent="." instance=ExtResource("3_dxmjg")]
+position = Vector2(-153, 72)
+
+[node name="Goblin2" parent="." instance=ExtResource("3_dxmjg")]
+position = Vector2(279, 140)
+
+[node name="Goblin3" parent="." instance=ExtResource("3_dxmjg")]
+position = Vector2(276, -141)
+
+[node name="Goblin4" parent="." instance=ExtResource("3_dxmjg")]
+position = Vector2(-295, -169)
 
 [editable path="Enemies/EnemySpawner"]

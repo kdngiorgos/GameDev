@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://68stj5qu6t"]
+
+[ext_resource type="Script" path="res://Scripts/Loot/xp.gd" id="1_23bav"]
+[ext_resource type="Texture2D" uid="uid://45r2smh1s6ca" path="res://Assets/Images/experienceblue.png" id="2_v6tvm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b7id4"]
+radius = 7.0
+
+[node name="XP" type="Area2D" groups=["loot"]]
+collision_mask = 2
+script = ExtResource("1_23bav")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b7id4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v6tvm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
