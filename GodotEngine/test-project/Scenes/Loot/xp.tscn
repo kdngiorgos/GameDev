@@ -8,6 +8,7 @@
 radius = 4.0
 
 [node name="XP" type="Area2D" groups=["loot"]]
+z_index = -1
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_23bav")

@@ -21,8 +21,10 @@ var cloud = preload("res://Scenes/Player/attacks/cloud.tscn")
 #GUI
 @onready var expBar = get_node("%TextureProgressBar")
 @onready var lbllevel = get_node("%lbl_level")
-
-
+@onready var levelPanel = get_node("%Levelup")
+@onready var upgradeoptions = get_node("%UpgradeOptions")
+@onready var sndLevelUp = get_node("%SoundLevelup")
+@onready var itemOptions = preload("res://Scenes/Player/item_option.tscn")
 
 
 
@@ -47,18 +49,18 @@ var dash_duration = 0.2
 
 #Wave
 var wave_attackspeed = 3
-var wave_level = 1
+var wave_level = 0
 
 #Cloud
 var cloud_ammo = 0
-var cloud_baseammo = 1
+var cloud_baseammo = 0
 var cloud_attackspeed = 3
-var cloud_level = 1
+var cloud_level = 0
 
 
 #WaterOrb
 var waterorb_ammo = 0
-var waterorb_baseammo = 1
+var waterorb_baseammo =5
 var waterorb_attackspeed = 1
 var waterorb_level = 1
 
@@ -180,9 +182,30 @@ func getExp(points):
 	experience += points
 	
 func levelup():
-	experience_level+=1
-	experience = 0
+	sndLevelUp.play()
+	lbllevel.text = str("Level: ", experience_level)
+	var tween = levelPanel.create_tween()
+	tween.tween_property(levelPanel,"position",Vector2(760,320),0.2).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN)
+	tween.play()
+	levelPanel.visible=true
 	
+	var options = 0
+	var optionsmax =3 
+	while options<optionsmax:
+		var option_choise = itemOptions.instantiate()
+		upgradeoptions.add_child(option_choise)
+		options+=1
+	get_tree().paused = true
+	
+func upgrade_character(upgrade):
+	var option_children = upgradeoptions.get_children()
+	for i in option_children:
+		i.queue_free()
+	levelPanel.visible=false
+	levelPanel.position=Vector2(2219,313)
+	get_tree().paused = false
+	calculate_experience(0)
+
 func anim():
 	if velocity.x**2 + velocity.y**2 >5000: #Running Animation
 		isRunning = 1 
@@ -231,27 +254,21 @@ func calculate_experience(loot):
 	if experience + collected_experience >= exp_required: #levelup
 		collected_experience -= exp_required-experience
 		experience_level += 1 
-		lbllevel.text = str("Level: ", experience_level)
 		experience = 0
 		exp_required = calculate_experiencecap()
-		calculate_experience(0)
+		levelup()
 	else:
 		experience += collected_experience
 		collected_experience = 0 
 	set_expbar(experience, exp_required)
 
 func calculate_experiencecap():
-	var exp_cap = experience_level
-	if experience_level < 10:
-		exp_cap = experience_level*10
-	elif experience_level < 40:
-		exp_cap = 100 + (experience_level-9)*20
-	else:
-		exp_cap = 255 + (experience_level-39)*12
-	return exp_cap
+	var base_xp = 5.0    # starting XP needed for level 1
+	var growth_rate = 1.2 # how fast it grows per level
+	return int(base_xp * pow(growth_rate, experience_level - 1))
 
 
 func set_expbar(set_value =1, set_max_value = 100):
 	var tween = get_tree().create_tween()
-	tween.tween_property(expBar,"value",set_value,0.1).set_trans(Tween.TRANS_LINEAR)
+	tween.tween_property(expBar,"value",set_value,0.2).set_trans(Tween.TRANS_LINEAR)
 	expBar.max_value = set_max_value

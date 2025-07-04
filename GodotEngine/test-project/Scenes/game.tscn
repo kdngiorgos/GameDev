@@ -116,22 +116,18 @@ script = ExtResource("1_h4ty7")
 [node name="Loot" type="Node" parent="." groups=["loot"]]
 
 [node name="XP" parent="Loot" instance=ExtResource("3_ldc4c")]
-z_index = -1
 position = Vector2(125, -88)
 experience = 5
 
 [node name="XP2" parent="Loot" instance=ExtResource("3_ldc4c")]
-z_index = -1
 position = Vector2(153, -37)
 experience = 5
 
 [node name="XP3" parent="Loot" instance=ExtResource("3_ldc4c")]
-z_index = -1
 position = Vector2(100, -41)
 experience = 5
 
 [node name="XP4" parent="Loot" instance=ExtResource("3_ldc4c")]
-z_index = -1
 position = Vector2(71, -78)
 experience = 5
 

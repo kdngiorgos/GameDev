@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwsddaxw2b35h"]
+
+[ext_resource type="Texture2D" uid="uid://br2lgkve7dw7c" path="res://Assets/Images/watericon.png" id="1_dpars"]
+[ext_resource type="Script" path="res://Scripts/item_option.gd" id="1_u8wpj"]
+[ext_resource type="FontFile" uid="uid://d2huecrkhaieo" path="res://Assets/JustBreatheBoldObliquethree-mOAj.otf" id="2_3ddj8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5lxwa"]
+font_size = 24
+
+[node name="ItemOption" type="ColorRect"]
+custom_minimum_size = Vector2(360, 80)
+anchors_preset = -1
+anchor_right = 0.187
+anchor_bottom = 0.074
+offset_right = 0.959991
+offset_bottom = 0.0800018
+color = Color(0.548963, 0.548963, 0.548963, 1)
+script = ExtResource("1_u8wpj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 75.0
+offset_bottom = 75.0
+color = Color(0, 0, 0, 1)
+
+[node name="ItemIcon" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_right = 71.0
+offset_bottom = 70.0
+texture = ExtResource("1_dpars")
+
+[node name="lbl_name" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 3.0
+offset_right = 132.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("2_3ddj8")
+text = "Name"
+label_settings = SubResource("LabelSettings_5lxwa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lbl_desc" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 34.0
+offset_right = 162.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("2_3ddj8")
+theme_override_font_sizes/font_size = 8
+text = "Description of item
+"
+autowrap_mode = 3
+
+[node name="lbl_level" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 291.0
+offset_right = 342.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_3ddj8")
+theme_override_font_sizes/font_size = 16
+text = "Level 1
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
