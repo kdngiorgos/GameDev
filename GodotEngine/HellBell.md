@@ -31,6 +31,7 @@ The last thing that would challenge Bell was a strong insecurity of the past now
 Character is a witch (in her mind), though her magic is not flashy. She throws confetti and ribbons like a dance show. The environment is something dreamy, we are inside her mind. The basic-normal enemies are just simple black figures without details. 
 
 At the start of the game she is old, around 40, and does not reveal much of who she is. 
+**The game progresses in opposite order of the actual events. We start at the end (age 40) and end at the start (age 14), like remembering her past slowly following her footsteps backwards. So we as the viewer get to unwind the story and understand her.**
 Moving on defeating "monsters" we learn things about her and the her past, what events and decisions made her who she is today, and defeating these challenges she unlocks new abilities and spells, and becomes younger (meaning more hp, speed and damage after every challenge)  
 
 Game is 2D platformer like Ori or Hollow Knight. At first the movement is burdened (She walks relatively slow and like she is shy or old), she drags her feet, hunch over and breath heavily. Our character has only one attack (A/X - melee attack - does not need mana but very weak and close combat), she has HP and Energy-Mana. You need to deal damage in order to replenish mana like Hollow Knight Silk. Later after you unlock them energy is used for Running, Jumping and Powers. 
@@ -40,7 +41,7 @@ Starting off after the tutorial she can see 4 doors (Labeled with markings that 
 
 These challenges are internal fights - demons, in order in which they appear and at what age they are first starting to become a real illness. Body Dysmorphia-35, Schizophrenia-30 , Addiction-25, Anxiety-20 and finally Grief/Rage-14
 
-The game progresses in opposite order of the actual events. We start at the end (age 40) and end at the start (age 14), like remembering her past slowly following her footsteps backwards. So we as the viewer get to unwind the story and understand her.
+
 
 -------------------------------------------------------------------------
 
