@@ -39,7 +39,7 @@ So she constantly needs to hit and engage in combat in order to replenish energy
 Starting off after the tutorial she can see 4 doors (Labeled with markings that indicate the according challenge she will face inside) and in the middle a big gate, that is covered with black (grief) and red (rage) mist and cannot be accessed unless all of the other 4 challenges have been cleared. At the end of each challenge is a Boss fight.
 
 These challenges are internal fights - demons, in order in which they appear and at what age they are first starting to become a real illness. Body Dysmorphia-35, Schizophrenia-30 , Addiction-25, Anxiety-20 and finally Grief/Rage-14
-
+The game progresses in opposite order of the actual events. We start at the end (age 40) and end at the start (age 14), like remembering her past slowly following her footsteps backwards. So we as the viewer get to unwind the story and understand her.
 -------------------------------------------------------------------------
 
 At first defeating Body Dysmorphia lets her move more freely and be more agile. (in game she is now fast, can run, jump and slide)
