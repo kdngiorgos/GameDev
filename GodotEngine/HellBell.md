@@ -4,7 +4,7 @@ HellBell
 
 Bell was a girl born in the 2000s. Her life from early on is scarred by her parents. Her parents are struggling with demons of their own.
 
-Her father is strict and has a lot of expectations from her, he doesn't yell at her but is always passive aggressive and expresses his disappointment every time Bell fails at something, small or big.
+Her father is strict and has a lot of expectations from her, he doesn't yell at her but is always passive aggressive and expresses his disappointment every time Bell fails at something, small or big. At least that's the way she felt and maybe that was the reason of why she second guesses her actions and doesn't like taking risks. 
 Her father was the root of her **ANXIETY** in her teen years due to fear of failure and disappointing him. He also made her have insecurities about her **BODY** weight (BODY DYSMORPHIA).
 
 Her mother was always kind and relaxed, but a bit lost, and Bell would always wonder if that is actually her mothers personality or the results for her psychosis/schizophrenia meds.. Bell loved her mother but felt a bit sorry for her mental illness. When Bell was in high-school her mother took her own life, and Bell didn't really accept that and acted like it didn't affect her for a long time.
