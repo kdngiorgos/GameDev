@@ -10,6 +10,8 @@ Her father was the root of her **ANXIETY** in her teen years due to fear of fail
 Her mother was always kind and relaxed, but a bit lost, and Bell would always wonder if that is actually her mothers personality or the results for her psychosis/schizophrenia meds.. Bell loved her mother but felt a bit sorry for her mental illness. When Bell was in high-school her mother took her own life, and Bell didn't really accept that and acted like it didn't affect her for a long time.
 This trouble made her fall into **ADDICTIONS** in order to escape her thoughts and her mother's genes meant that Bell would later inherit **SCHIZOPHRENIA** (Hearing voices \ hallucinations) as well
 
+---
+
 Bell was an artistic child, one that growing up would spend time Drawing and Dancing and she wanted to become a dancer. She never tried pursuing it though as it meant disappointment and uncertainty in her father's eyes, and her not being comfortable with her body didn't help much. Unfortunately she was a shy kid, without many friends, and her father being himself, she didn't have anyone to express herself to. So all of her problems were shut down and not even thought after.
 The first battle that she had to face was a strong one, and of course she wasn't ready for her mother's death, and her mind kept it a secret from her, she didn't want to know. You could almost see this cloudy, misty place inside mind that was locked off from the other part. Like a dark bad place no one is allowed inside, it kinda reminds me of Aeolus and the bag he gave Odysseus.
 
@@ -20,12 +22,12 @@ Graduation led to a bunch of challenges. She had to now find a full-time job and
 
 Ultimately she did take an altering decision, she moved abroad, tried her luck elsewhere and pursued becoming a dancer, somewhere she can define her new self and not get shaped by other people's images of her. Since her world meant facing people, habits and problems of the past, she thought this was the best choice. Pete wasn't willing to follow her so they split apart.
 
-A few months later Bell quit smoking weed, starting a new life was difficult, meeting new people and making friends wasn't easy for her and there was no-one and anything to express all these problems to, her financial situation meant working 14-hour days before making a living from dancing and when it was time to relax she needed something stronger to take her mind away, so she migrated to stronger drugs. This, in relation to mental stress, led to her having symptoms of **SCHIZOPHRENIA**, hallucinations became stronger and stronger and she would hear voices constantly in her head, expressing her fears, her inner thoughts and insecurities.
+Starting a new life was difficult, meeting new people and making friends wasn't easy for her and there was no-one and anything to express all these problems to. At the same time her financial situation meant working 14-hour days before making a living from dancing and when it was time to relax she needed something stronger to take her mind away. So a few months later she stopped smoking weed, but she migrated to stronger drugs instead. This, in relation to mental stress, led to her having symptoms of **SCHIZOPHRENIA**, hallucinations became stronger and stronger and she would hear voices constantly in her head, expressing her fears, her inner thoughts and insecurities.
 
 The last thing that would challenge Bell was a strong insecurity of the past now grown stronger. As Bell hit 35 her body was not the same as before, she gained a bit of weight and would get rusty in her movement. Trying to become a dancer at that age was a challenge, competing with 20 year-olds meant comparing herself to younger girls with better bodies and more confidence. Her weight insecurity grew stronger than ever and **BODY DYSMORPHIA** started to haunt her.  
 
 
-
+-------------------------------------------------------------------------
 # Game 
 
 Character is a witch (in her mind), though her magic is not flashy. She throws confetti and ribbons like a dance show. The environment is something dreamy, we are inside her mind. The basic-normal enemies are just simple black figures without details.  
@@ -42,7 +44,6 @@ So she constantly needs to hit and engage in combat in order to replenish energy
 Starting off after the tutorial she can see 4 doors (Labeled with markings that indicate the according challenge she will face inside) and in the middle a big gate, that is covered with black (grief) and red (rage) mist and cannot be accessed unless all of the other 4 challenges have been cleared. At the end of each challenge is a Boss fight.
 
 These challenges are internal fights - demons, in order in which they appear and at what age they are first starting to become a real illness. Body Dysmorphia-35, Schizophrenia-30 , Addiction-25, Anxiety-20 and finally Grief/Rage-14
-
 
 
 -------------------------------------------------------------------------
