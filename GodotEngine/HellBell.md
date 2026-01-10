@@ -38,7 +38,7 @@ Character is a witch (in her mind), though her magic is not flashy. She throws c
 At the start of the game she is old, around 40, and does not reveal much of who she is.
 Moving on defeating "monsters" we learn things about her and the her past, what events and decisions made her who she is today, and defeating these challenges she unlocks new abilities and spells, and becomes younger (meaning more hp, speed and damage after every challenge)  
 
-Game is 2D platformer like Ori or Hollow Knight. At first the movement is burdened (She walks relatively slow and like she is shy or old), she drags her feet, hunch over and breath heavily. Our character has only one attack (A/X - melee attack - does not need mana but very weak and close combat), she has HP and Energy-Mana. You need to deal damage in order to replenish mana like Hollow Knight Silk. Later after you unlock them energy is used for Running, Jumping and Powers. 
+Game is 2D platformer like CupHead or Hollow Knight  OR HackNSlash like Hades. At first the movement is burdened (She walks relatively slow and like she is shy or old), she drags her feet, hunch over and breath heavily. Our character has only one attack (A/X - melee attack - does not need mana but very weak and close combat), she has HP and Energy-Mana. You need to deal damage in order to replenish mana like Hollow Knight Silk. Later after you unlock them energy is used for Running, Jumping and Powers. 
 So she constantly needs to hit and engage in combat in order to replenish energy for abilities or movement (like an addiction)
 
 Starting off after the tutorial she can see 4 doors (Labeled with markings that indicate the according challenge she will face inside) and in the middle a big gate, that is covered with black (grief) and red (rage) mist and cannot be accessed unless all of the other 4 challenges have been cleared. At the end of each challenge is a Boss fight.
@@ -48,16 +48,25 @@ These challenges are internal fights - demons, in order in which they appear and
 
 -------------------------------------------------------------------------
 
-At first defeating Body Dysmorphia lets her move more freely and be more agile. (in game she is now fast, can run, jump and slide)
+At first defeating Body Dysmorphia lets her move more freely and be more agile (in game she is now fast, can run, jump and slide). Dysmorphia is a figurine, like a deformed body to ressemble the "perfect" body. (She might not even appear, the boss fight can also be enviromental only).
+This boss fight is just a movement challenge. There is a dark platform and a light and mirrors reflecting this light. Bell must dodge the light cause she will get damaged if seen, and she needs to break the mirrors and at the end the light source in order to defeat the challenge.
 
-Then defeating Schizophrenia means she can think clear, and remembers more spells, she can use them now without second guessing herself (in game unlocks new powers - spells) 
 
-After defeating Addiction she is free from needing to constantly replenish her energy (in game can store more mana and gains **passive mana regeneration** and now she does not need to fight to survive)
+Then defeating Schizophrenia means she can think clear, and remembers more spells (in game unlocks new powers - spells). The boss is a short and black figure with a wooden mask.
+This boss fight is a guessing game. Schizophrenia spawns decoys but only he should be damaged. If Bell hits the decoys she will get damaged and start from the first round, and if she hits the boss she moves to the next round, the rounds are with 1, 2, 4, 6 and finally 8 enemies. The only way to distinguish the decoys from the original is the fact that decoys don't cast shaodows.
 
-Lastly defeating Anxiety means she is more relaxed and clear-minded (has health regeneration and can **slow down time** - **focus**)
 
-The final boss is Grief and Rage (Double boss fight like Ornstein and Smough) 
+After defeating Addiction she is free from needing to constantly replenish her energy (in game can store more mana and gains **passive mana regeneration** and now she does not need to fight to survive). Addiction is a figure like a Dementor (HarryPotter).
+This boss fight is survival. Addiction constantly drains your mana and you need to keep hitting it in order to replenish it, if Bell's mana runs out Addiction will start to deal damage instead. You need to follow it around as it flies and keep on hitting it to survive and win.
+
+
+At the end defeating Anxiety means she is more relaxed and clear-minded (has health regeneration and can **slow down time** - **focus**). Anxiety is ... BLANK FOR NOW ...
+Anxiety boss fight is just a bullet hell. Again Bell must survive a bullet hell, dodge all the incoming projectiles and damage the boss when possible, she must be calm and methodical with her movement.
+
+
+The final boss fight is Grief and Rage (Double boss fight like Ornstein and Smough) 
 **Grief is fat, round and slow. While Rage is lean, has edges and corners and is fast**. (Inside out inspiration xd) Its the final boss cause it appears first in her life and also because its the hardest for her to accept and overcome
+Grief has enviromental attacks like slowing down the player or reducing visibility in the arena (all of his attacks will have dark-bluish tint), while Rage will be the one attacking, he attacks with a spear and can dash (and leaves a red-yellow mist behind him kinda like flash)
 
 
 
