@@ -26,6 +26,7 @@ But mana is slowly but constantly getting drained. So she constantly needs to hi
 Starting off after the tutorial she can only go one way, to the path that leads to the Dysmorphia boss fight.
 After that she is able to jump so going back to the start she can progress to a new area. This leads her to the next boss which is Schizophrenia, which will let her use new attacks (heavy and light) and also wall jump. 
 Wall jump unlocks yet another area that if explored will lead to the Addiction boss, which when defeated will stop mana from draining, and will also increase max mana and max health points.
+Moving on she encounters Anxiety, and by surviving it she now has the ability to focus and slow down time.
 Finally the last and only way leads to the final bossfight, Rage and Grief. 
 After defeating the duo, the game ends and the only thing left is to walk back the way you came, returning to reality (waking up from your dream-mind) and realizing you won.
  
